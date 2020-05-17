@@ -7,14 +7,27 @@
 //
 
 import UIKit
+import SkeletonView
 
 class ViewController: UIViewController {
-
+    
+    @IBOutlet weak var myView: UIView!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        myView.isSkeletonable = true
+        myView.showAnimatedGradientSkeleton()
+        
     }
 
-
+    @IBAction func action(_ sender: UIButton) {
+        
+        
+        myView.hideSkeleton()
+        myView.stopSkeletonAnimation()
+    }
+    
 }
 
